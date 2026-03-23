@@ -1,0 +1,28 @@
+name = "dotnet"
+type = "language"
+
+[platform.linux]
+exe-path = "dotnet"
+download-file = "dotnet-sdk-{version}-linux-{arch}.tar.gz"
+
+[platform.macos]
+exe-path = "dotnet"
+download-file = "dotnet-sdk-{version}-osx-{arch}.tar.gz"
+
+[platform.windows]
+exe-path = "dotnet.exe"
+download-file = "dotnet-sdk-{version}-win-{arch}.zip"
+
+[install]
+download-url = "https://builds.dotnet.microsoft.com/dotnet/Sdk/{version}/{download_file}"
+
+[install.arch]
+aarch64 = "arm64"
+x86_64 = "x64"
+
+[resolve]
+git-url = "https://github.com/dotnet/sdk"
+version-pattern = "^v(\\d+\\.\\d+\\.\\d+)$"
+
+[detect]
+version-files = ["global.json"]
